@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--Website configuration -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab-1</title>
+    <!--Insert bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--Insert bootstrap css icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Insert custom css -->
+    <link rel="stylesheet" href="style.css">
+    <!--Insert font awesome css for star rating -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Insert google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+    <!--Add some color variables-->
+    <style>
+        /*Color variables*/
+        :root {
+            --navbar-color: #DAF7A6;
+            --showcase-color: #000000;
+            --bio-color: #FFC300;
+            --webtech-color: #EC7063;
+            --competence-color: #9CDA0D;
+            --statement-color: #F27A09;
+        }
+    </style>
+
+</head>
+
+
+<!--Visible webpage-->
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center">
+            <!--Logo-->
+            <a class="navbar-brand" href="index.html">
+                <span class="bi bi-globe fs-2"></span>
+                ITWD6.408
+            </a>
+            <!--Links-->
+            <div id="sideNav" class='nav-container'>
+                <ul class="navbar-nav fs-4">
+                    <li class="nav-item">
+                        <a class="nav-link p-2 active" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="form.html">FORMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="webapi.html">WebAPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="javascript.html">JAVASCRIPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="research.html">RESEARCH</a>
+                    </li>                
+                </ul>
+            </div>
+            <div class="header-icons">
+                <!--Mobile Search-->
+                <button class="btn d-lg-none" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+                <!--Mobile Hamburger-->
+                <button class="navbar-toggler border-0 d-lg-none" type="button" onclick="toggleNav()">
+                    <span class="bi bi-list fs-1"></span>
+                </button>
+                <!--Desktop Search-->
+                <button class="btn d-none d-lg-block" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--Overlay-->
+    <div id="overlayBackdrop" class="overlay-backdrop" onclick="closeNav()"></div>
+    <!--Search Input-->
+    <div id="collapseSearch" class="collapse container-fluid pb-2 search-bar">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+    </div>
+
+    <!--Main Area-->
+    <main class="container-fluid" style="min-height: 85vh">
+
+        <header class="row">
+            <div class="header-image"></div>
+            <div class="bg-text">
+                <div style="text-align: center;">
+                    <h3 class="text-center">Advanced Web Page Development</h3>
+                    <h1 class="text-center">I am Bryce Kraus</h1>
+                    <p class="text-center">And I am a Web Developer</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="row bg-secondary">
+            <div class="col-sm-12 col-md-6 col-lg-6 mg-3" style="background-color: var(--bio-color);">
+                <h2>BIO</h2>
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 d-flex justify-content-center align-items-center"> 
+                        <img class="img-fluid d-block portrait bg-image" src="images/headshot.jpg" alt="portrait">
+                    </div>
+                    <div class="col-sm-12 col-md-9">
+                        <p class="ms-5">I am a student at the Eastern Institute of Technology (EIT) studying Advanced Web Page Development. I am currently in my second year of study and have a passion for web development. I enjoy creating responsive and user-friendly websites that provide a great user experience. In my free time, I like to explore new web technologies and stay updated with the latest trends in web development.
+                        </p>
+                    </div>						
+                </div>
+            </div>	
+            <div class="col-sm-12 col-md-6 col-lg-6" style="background-color: var(--webtech-color);">
+                <h1 style="font-family: 'Times New Roman';">MY WEB TECHNOLOGIES</h1>
+                <h2 style="color:blue">My Top 5 Web Technologies</h2>
+                <ol style="color: blue;">
+                    <li>Code Editor:<a style="color: black;"> Notepad++, Visual Studio Code</a></li>
+                    <li>Hosting: <a style="color: black;"> Github</a></li>					  
+                    <li>Browser: <a style="color: black;"> Chrome, Edge, Firefox, Brave</a></li>
+                    <li>Frameworks: <a style="color: black;"> Bootstrap, ReactJS, JQuery</a></li>
+                    <li>Trio Web language: <a style="color: black;"> HTML, CSS, JS</a></li>
+                </ol> 
+            </div>				
+        </section>
+
+        <!--Row 3-->
+        <div class="row" style="background-color: var(--competence-color);">
+            <!--Divide into 3 columns-->
+            <div class="col-12">
+                <h1>MY WEB DEVELOPMENT COMPETENCES</h1>
+            </div>
+            
+            <div class="col-sm-12 col-md-4">
+                <div class="flip-box container-fluid">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+                            <div class="row d-flex justify-content-center align-items-center" style="height: 100%;">
+                                <h1 class="flip-box-text col-sm-6 col-md-12">MARK UP (HTML5)</h1>
+                                <div class="col-sm-6 col-md-12 d-flex justify-content-center align-items-center">
+                                    <img class="img-fluid d-block mx-auto logo" src="images/html5.png" alt="html5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-box-back flip-box-back-text">
+                            <h2 class="flip-box-back-text">COMPETENCE</h2><br>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                </div>				
+            </div>		
+            
+            <div class="col-sm-12 col-md-4">
+                <div class="flip-box container-fluid">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+                            <div class="row d-flex justify-content-center align-items-center" style="height: 100%;">
+                                <h1 class="flip-box-text col-sm-6 col-md-12">STYLING (CSS3)</h1>
+                                <div class="col-sm-6 col-md-12 d-flex justify-content-center align-items-center">
+                                    <img class="img-fluid d-block mx-auto logo" src="images/css3.png" alt="css">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-box-back flip-box-back-text">
+                            <h2 class="flip-box-back-text">COMPETENCE</h2><br>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                </div>				
+            </div>	
+            
+            <div class="col-sm-12 col-md-4">
+                <div class="flip-box container-fluid">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+                            <div class="row d-flex justify-content-center align-items-center" style="height: 100%;">
+                                <h1 class="flip-box-text col-sm-6 col-md-12">INTERACTIVITY (JAVASCRIPT)</h1>
+                                <div class="col-sm-6 col-md-12 d-flex justify-content-center align-items-center">
+                                    <img class="img-fluid d-block mx-auto logo" src="images/javascript.png" alt="javascript">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-box-back flip-box-back-text">
+                            <h2 class="flip-box-back-text">COMPETENCE</h2><br>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                </div>				
+            </div>	
+        </div>
+
+        <!--Row 4-->
+        <section class="row bg-success">
+            <!--Have only 1 column-->
+            <div class="col-12" style="background-color: var(--statement-color);">
+                <h1>STATEMENT OF AUTHENTICITY</h1>
+                <p class="ms-5">“I confirm that:<br>
+                This is an original assessment and is entirely my own work.<br>
+                It contains no material previously published or written by another person or myself except where due acknowledgement is made in the text.<br>
+                No material which to a substantial extent, has been submitted for any other academic course, is included without acknowledgement.”<br>
+                </p>
+            </div>			
+        </section>
+
+    </main>
+
+    <!--Footer here-->
+    <footer class="container-fluid" style="background-color: var(--navbar-color);">
+        <div class="row">
+            <!--Social Media-->
+            <div class="col-12 col-md-4 d-flex justify-content-center align-items-center d-lg-block">
+                <h3>
+                    <span class="bi bi-linkedin text-info m-1"></span>
+                    <span class="bi bi-facebook text-success m-1"></span>
+                    <span class="bi bi-twitter text-info m-1"></span>
+                    <span class="bi bi-youtube text-danger m-1"></span>
+                </h3>
+            </div>
+
+            <!--Author name section:
+                on small devices: take up 2/3 of the width (col-8), text aligned to center both horizontally and vertically (d-flex justify-content-center align-items-center)
+                on medium devices and large devices: take up 1/3 of the width (col-md-4), text aligned to center both horizontally and vertically (d-flex justify-content-center align-items-center)
+            -->
+            <div class="col-8 col-md-4 d-flex justify-content-center align-items-center">
+                <p class="fs-6">@Bryce Kraus (EIT)</p> 
+            </div>
+            
+            <!--Privacy policy section:
+                on small devices: take up 1/3 of the width (col-4), text aligned to the right (d-flex justify-content-center align-items-center)
+                on medium devices and large devices: take up 1/3 of the width (col-md-4), text aligned to right (d-flex justify-content-end align-items-center)
+                => we can improve by using only "col-4 d-flex justify-content-end align-items-center" to achieve the same effect
+            -->
+            <div class="col-4 col-md-4 d-flex justify-content-end align-items-center">
+                <p class="fs-6 mb-0" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal" style="cursor: pointer;">
+                    Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+        <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyPolicyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        We are committed to protecting your privacy and handling your personal
+                        information in accordance with the Privacy Act 2020 of New Zealand.
+                    </p>
+
+                    <h6>Collection of Information</h6>
+                    <p>
+                        Personal information is collected only when it is necessary for a lawful
+                        purpose connected with our functions or activities. Information may be
+                        collected directly from you or, where permitted by law, from other sources.
+                    </p>
+
+                    <h6>Use of Information</h6>
+                    <p>
+                        Any personal information collected will be used only for the purpose for
+                        which it was obtained, or for purposes that are directly related to that
+                        purpose, unless otherwise permitted by law.
+                    </p>
+
+                    <h6>Storage and Security</h6>
+                    <p>
+                        We take reasonable steps to protect personal information from loss,
+                        unauthorized access, misuse, disclosure, alteration, or destruction.
+                        Access to personal information is restricted to authorized individuals.
+                    </p>
+
+                    <h6>Disclosure of Information</h6>
+                    <p>
+                        Personal information will not be disclosed to third parties except where
+                        required by law, authorized by the individual concerned, or otherwise
+                        permitted under the Privacy Act 2020.
+                    </p>
+
+                    <h6>Access and Correction</h6>
+                    <p>
+                        You have the right to request access to the personal information we hold
+                        about you and to request correction of that information if you believe it
+                        is inaccurate, incomplete, or out of date.
+                    </p>
+
+                    <h6>Retention of Information</h6>
+                    <p>
+                        Personal information is retained only for as long as it is required for
+                        the purpose for which it was collected or as required by law.
+                    </p>
+
+                    <h6>Cookies and Website Analytics</h6>
+                    <p>
+                        This website may use cookies and analytics technologies to improve user
+                        experience, monitor website performance, and understand how visitors use
+                        our services. You may disable cookies through your browser settings,
+                        although some features of the website may not function correctly.
+                    </p>
+
+                    <h6>Your Rights</h6>
+                    <p>
+                        Under the Privacy Act 2020, individuals have rights regarding how their
+                        personal information is collected, used, stored, and disclosed, including
+                        the right to access and request correction of their information.
+                    </p>
+
+                    <p class="small text-muted mt-3">
+                        This Privacy Policy is intended to align with the Information Privacy
+                        Principles contained within the New Zealand Privacy Act 2020.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Insert bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script type="module" src="javascript.js"></script>
+    <script src="morejava.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--Website configuration -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab-1</title>
+    <!--Insert bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--Insert bootstrap css icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Insert custom css -->
+    <link rel="stylesheet" href="style.css">
+    <!--Insert font awesome css for star rating -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Insert google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+    <!--Add some color variables-->
+    <style>
+        /*Color variables*/
+        :root {
+            --navbar-color: #DAF7A6;
+            --showcase-color: #000000;
+            --bio-color: #FFC300;
+            --webtech-color: #EC7063;
+            --competence-color: #9CDA0D;
+            --statement-color: #F27A09;
+        }
+    </style>
+
+</head>
+
+
+<!--Visible webpage-->
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center">
+            <!--Logo-->
+            <a class="navbar-brand" href="index.html">
+                <span class="bi bi-globe fs-2"></span>
+                ITWD6.408
+            </a>
+            <!--Links-->
+            <div id="sideNav" class='nav-container'>
+                <ul class="navbar-nav fs-4">
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2 active" href="form.html">FORMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="webapi.html">WebAPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="#">JAVASCRIPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="research.html">RESEARCH</a>
+                    </li>                
+                </ul>
+            </div>
+            <div class="header-icons">
+                <!--Mobile Search-->
+                <button class="btn d-lg-none" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+                <!--Mobile Hamburger-->
+                <button class="navbar-toggler border-0 d-lg-none" type="button" onclick="toggleNav()">
+                    <span class="bi bi-list fs-1"></span>
+                </button>
+                <!--Desktop Search-->
+                <button class="btn d-none d-lg-block" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--Overlay-->
+    <div id="overlayBackdrop" class="overlay-backdrop" onclick="closeNav()"></div>
+    <!--Search Input-->
+    <div id="collapseSearch" class="collapse container-fluid pb-2 search-bar">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+    </div>
+
+       <!--Main Area-->
+    <main class="container-fluid" style="min-height: 85vh">
+        <div class="accordion row align-items-start g-1" id="accordionExample">
+            <!--Group 2 buttons in this division-->
+            <div class="row col-12 col-lg-3 g-1">
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button border border-primary" type="button" 
+							data-bs-toggle="collapse" data-bs-target="#collapseOne"
+							aria-expanded="true" aria-controls="collapseOne">
+                        HTML FORM
+                    </button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button" 
+						data-bs-toggle="collapse" data-bs-target="#collapseTwo" 
+                        aria-expanded="false" aria-controls="collapseTwo">
+						GOOGLE FORM
+                    </button>
+                </h2>
+            </div>
+
+            <!--Group 2 Contents here-->
+            <div class="col-12 col-lg-9"> 
+                <div class="accordion-item">
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                        <form name="mobile-techno-form">
+
+                            <h2>Mobile Technology Form</h2>
+                            
+                            <!--Names-->
+                            <div class="row mb-3">
+                                <label for="fname" class="col-sm-2 col-form-label">First name:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="fname" name="fname" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="lname" class="col-sm-2 col-form-label">Last name:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="lname" name="lname" required>
+                                </div>
+                            </div>
+                           
+                            <!--Address-->
+                            <h2>Address</h2>
+                            <div class="row mb-3">
+                                <label for="line1" class="col-sm-2 col-form-label">Line 1:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="line1" name="line1" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="line2" class="col-sm-2 col-form-label">Line 2:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="line2" name="line2" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="city" class="col-sm-2 col-form-label">Town/City:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="city" name="city" required>
+                                </div>
+                            </div>
+                            
+                            <!--Gender-->
+                            <fieldset>
+                                <legend class="col-form-label col-sm-2 pt-0">Gender:</legend>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" value="male">
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" value="female">
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" value="other">
+                                        <label class="form-check-label" for="otherGender">Other</label>
+                                    </div>
+                            </fieldset><br>
+
+                            <!--Mobile Phone Type-->
+                            <fieldset>
+                                <legend class="col-form-label col-sm-2 pt-0">Mobile Phone Type:</legend>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="phoneType" value="male">
+                                        <label class="form-check-label" for="windows">Windows</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="phoneType" value="female">
+                                        <label class="form-check-label" for="apple">Apple</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="phoneType" value="other">
+                                        <label class="form-check-label" for="android">Android</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="phoneType" value="other">
+                                        <label class="form-check-label" for="otherPhoneType">Other</label>
+                                    </div>
+                            </fieldset><br>
+
+                            <!--Mobile Provider-->
+                            <fieldset class="row">
+                                <legend class="col-form-label col-sm-2 pt-0">Mobile Provider:</legend>
+                                <div class="col-sm-10">
+                                    <select class="form-select" aria-label="Mobile Provider">
+                                        <option selected>Select Provider</option>
+                                        <option value="None">None</option>
+                                        <option value="Spark">Spark</option>
+                                        <option value="Vodafone">Vodafone</option>
+                                        <option value="Now">Now</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </fieldset><br>
+                            <fieldset class="row">
+                                <legend class="col-form-label col-sm-2 pt-0">Do you use your phone for study? Please Explain:</legend>
+                                <div class="col-sm-10">
+                                    <div class="mb-3">
+                                        <label for="study" class="form-label"></label>
+                                        <textarea class="form-control" id="study" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="submitModal">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item bg-purple">
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body container-fluid" style="min-height: 50vh;">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKZmfuwPM4vJCefy5QJMHS6-aLFb2ZLIyn9k-AlFDkaTtqXg/viewform?embedded=true" width="640" height="2038" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </main>
+    <!--Footer here-->
+    <footer class="container-fluid" style="background-color: var(--navbar-color);">
+        <div class="row">
+            <!--Social Media-->
+            <div class="col-12 col-md-4 d-flex justify-content-center align-items-center d-lg-block">
+                <h3>
+                    <span class="bi bi-linkedin text-info m-1"></span>
+                    <span class="bi bi-facebook text-success m-1"></span>
+                    <span class="bi bi-twitter text-info m-1"></span>
+                    <span class="bi bi-youtube text-danger m-1"></span>
+                </h3>
+            </div>
+
+            <!--Author name section:
+                on small devices: take up 2/3 of the width (col-8), text aligned to center both horizontally and vertically (d-flex justify-content-center align-items-center)
+                on medium devices and large devices: take up 1/3 of the width (col-md-4), text aligned to center both horizontally and vertically (d-flex justify-content-center align-items-center)
+            -->
+            <div class="col-8 col-md-4 d-flex justify-content-center align-items-center">
+                <p class="fs-6">@Bryce Kraus (EIT)</p> 
+            </div>
+            
+            <!--Privacy policy section:
+                on small devices: take up 1/3 of the width (col-4), text aligned to the right (d-flex justify-content-center align-items-center)
+                on medium devices and large devices: take up 1/3 of the width (col-md-4), text aligned to right (d-flex justify-content-end align-items-center)
+                => we can improve by using only "col-4 d-flex justify-content-end align-items-center" to achieve the same effect
+            -->
+            <div class="col-4 col-md-4 d-flex justify-content-end align-items-center">
+                <p class="fs-6 mb-0" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal" style="cursor: pointer;">
+                    Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+        <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyPolicyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        We are committed to protecting your privacy and handling your personal
+                        information in accordance with the Privacy Act 2020 of New Zealand.
+                    </p>
+
+                    <h6>Collection of Information</h6>
+                    <p>
+                        Personal information is collected only when it is necessary for a lawful
+                        purpose connected with our functions or activities. Information may be
+                        collected directly from you or, where permitted by law, from other sources.
+                    </p>
+
+                    <h6>Use of Information</h6>
+                    <p>
+                        Any personal information collected will be used only for the purpose for
+                        which it was obtained, or for purposes that are directly related to that
+                        purpose, unless otherwise permitted by law.
+                    </p>
+
+                    <h6>Storage and Security</h6>
+                    <p>
+                        We take reasonable steps to protect personal information from loss,
+                        unauthorized access, misuse, disclosure, alteration, or destruction.
+                        Access to personal information is restricted to authorized individuals.
+                    </p>
+
+                    <h6>Disclosure of Information</h6>
+                    <p>
+                        Personal information will not be disclosed to third parties except where
+                        required by law, authorized by the individual concerned, or otherwise
+                        permitted under the Privacy Act 2020.
+                    </p>
+
+                    <h6>Access and Correction</h6>
+                    <p>
+                        You have the right to request access to the personal information we hold
+                        about you and to request correction of that information if you believe it
+                        is inaccurate, incomplete, or out of date.
+                    </p>
+
+                    <h6>Retention of Information</h6>
+                    <p>
+                        Personal information is retained only for as long as it is required for
+                        the purpose for which it was collected or as required by law.
+                    </p>
+
+                    <h6>Cookies and Website Analytics</h6>
+                    <p>
+                        This website may use cookies and analytics technologies to improve user
+                        experience, monitor website performance, and understand how visitors use
+                        our services. You may disable cookies through your browser settings,
+                        although some features of the website may not function correctly.
+                    </p>
+
+                    <h6>Your Rights</h6>
+                    <p>
+                        Under the Privacy Act 2020, individuals have rights regarding how their
+                        personal information is collected, used, stored, and disclosed, including
+                        the right to access and request correction of their information.
+                    </p>
+
+                    <p class="small text-muted mt-3">
+                        This Privacy Policy is intended to align with the Information Privacy
+                        Principles contained within the New Zealand Privacy Act 2020.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Insert bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script type="module" src="javascript.js"></script>
+
+</body>
+
+</html>

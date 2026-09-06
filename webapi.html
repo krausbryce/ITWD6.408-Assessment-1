@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--Website configuration -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab-1</title>
+    <!--Insert bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--Insert bootstrap css icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Insert custom css -->
+    <link rel="stylesheet" href="style.css">
+    <!--Insert font awesome css for star rating -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Insert google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+    <!--Add some color variables-->
+    <style>
+        /*Color variables*/
+        :root {
+            --navbar-color: #DAF7A6;
+            --showcase-color: #000000;
+            --bio-color: #FFC300;
+            --webtech-color: #EC7063;
+            --competence-color: #9CDA0D;
+            --statement-color: #F27A09;
+        }
+    </style>
+
+</head>
+
+
+<!--Visible webpage-->
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center">
+            <!--Logo-->
+            <a class="navbar-brand" href="index.html">
+                <span class="bi bi-globe fs-2"></span>
+                ITWD6.408
+            </a>
+            <!--Links-->
+            <div id="sideNav" class='nav-container'>
+                <ul class="navbar-nav fs-4">
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="form.html">FORMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2 active" href="webapi.html">WebAPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="javascript.html">JAVASCRIPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="research.html">RESEARCH</a>
+                    </li>                
+                </ul>
+            </div>
+            <div class="header-icons">
+                <!--Mobile Search-->
+                <button class="btn d-lg-none" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+                <!--Mobile Hamburger-->
+                <button class="navbar-toggler border-0 d-lg-none" type="button" onclick="toggleNav()">
+                    <span class="bi bi-list fs-1"></span>
+                </button>
+                <!--Desktop Search-->
+                <button class="btn d-none d-lg-block" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--Overlay-->
+    <div id="overlayBackdrop" class="overlay-backdrop" onclick="closeNav()"></div>
+    <!--Search Input-->
+    <div id="collapseSearch" class="collapse container-fluid pb-2 search-bar">
+        <input id="global-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+    </div>
+
+    <!--Main Area-->
+     <div class="accordion row align-items-start g-1" id="accordionExample" style="min-height: 85vh">
+            <!--buttons in this division-->
+            <div class="row col-12 col-lg-3 g-1">
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">JSON RULES</button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" 
+                        aria-expanded="false" aria-controls="collapseTwo">REST API</button>
+                </h2>
+            </div>
+
+            <!--content areas here-->
+            <div class="col-12 col-lg-9"> 
+                <div class="accordion-item">
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                            <h2>JSON RULES</h2>
+                            <p>JSON (Javascript Object Notation) rules dictate how you structure and format lightweight data.</p>
+                            <div class="data-grid">
+                                <div id="jsonrule-data" style="padding: 10px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                            <h2>Mobile Technology Form: Fetching Data from Supabase</h2>
+                            <input type="text" id="mobile-search" class="form-control mb-3" placeholder="Search Records...">
+                            <div id="mobiletechnologyform-data" style="padding: 10px;"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!--Footer here-->
+    <footer class="container-fluid" style="background-color: var(--navbar-color);">
+        <div class="row">
+            <!--Social Media-->
+            <div class="col-12 col-md-4 d-flex justify-content-center align-items-center d-lg-block">
+                <h3>
+                    <span class="bi bi-linkedin text-info m-1"></span>
+                    <span class="bi bi-facebook text-success m-1"></span>
+                    <span class="bi bi-twitter text-info m-1"></span>
+                    <span class="bi bi-youtube text-danger m-1"></span>
+                </h3>
+            </div>
+
+            <!--Author name section:
+                on small devices: take up 2/3 of the width (col-8), text aligned to center both horizontally and vertically (d-flex justify-content-center align-items-center)
+                on medium devices and large devices: take up 1/3 of the width (col-md-4), text aligned to center both horizontally and vertically (d-flex justify-content-center align-items-center)
+            -->
+            <div class="col-8 col-md-4 d-flex justify-content-center align-items-center">
+                <p class="fs-6">@Bryce Kraus (EIT)</p> 
+            </div>
+            
+            <!--Privacy policy section:
+                on small devices: take up 1/3 of the width (col-4), text aligned to the right (d-flex justify-content-center align-items-center)
+                on medium devices and large devices: take up 1/3 of the width (col-md-4), text aligned to right (d-flex justify-content-end align-items-center)
+                => we can improve by using only "col-4 d-flex justify-content-end align-items-center" to achieve the same effect
+            -->
+            <div class="col-4 col-md-4 d-flex justify-content-end align-items-center">
+                <p class="fs-6 mb-0" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal" style="cursor: pointer;">
+                    Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+        <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyPolicyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        We are committed to protecting your privacy and handling your personal
+                        information in accordance with the Privacy Act 2020 of New Zealand.
+                    </p>
+
+                    <h6>Collection of Information</h6>
+                    <p>
+                        Personal information is collected only when it is necessary for a lawful
+                        purpose connected with our functions or activities. Information may be
+                        collected directly from you or, where permitted by law, from other sources.
+                    </p>
+
+                    <h6>Use of Information</h6>
+                    <p>
+                        Any personal information collected will be used only for the purpose for
+                        which it was obtained, or for purposes that are directly related to that
+                        purpose, unless otherwise permitted by law.
+                    </p>
+
+                    <h6>Storage and Security</h6>
+                    <p>
+                        We take reasonable steps to protect personal information from loss,
+                        unauthorized access, misuse, disclosure, alteration, or destruction.
+                        Access to personal information is restricted to authorized individuals.
+                    </p>
+
+                    <h6>Disclosure of Information</h6>
+                    <p>
+                        Personal information will not be disclosed to third parties except where
+                        required by law, authorized by the individual concerned, or otherwise
+                        permitted under the Privacy Act 2020.
+                    </p>
+
+                    <h6>Access and Correction</h6>
+                    <p>
+                        You have the right to request access to the personal information we hold
+                        about you and to request correction of that information if you believe it
+                        is inaccurate, incomplete, or out of date.
+                    </p>
+
+                    <h6>Retention of Information</h6>
+                    <p>
+                        Personal information is retained only for as long as it is required for
+                        the purpose for which it was collected or as required by law.
+                    </p>
+
+                    <h6>Cookies and Website Analytics</h6>
+                    <p>
+                        This website may use cookies and analytics technologies to improve user
+                        experience, monitor website performance, and understand how visitors use
+                        our services. You may disable cookies through your browser settings,
+                        although some features of the website may not function correctly.
+                    </p>
+
+                    <h6>Your Rights</h6>
+                    <p>
+                        Under the Privacy Act 2020, individuals have rights regarding how their
+                        personal information is collected, used, stored, and disclosed, including
+                        the right to access and request correction of their information.
+                    </p>
+
+                    <p class="small text-muted mt-3">
+                        This Privacy Policy is intended to align with the Information Privacy
+                        Principles contained within the New Zealand Privacy Act 2020.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Insert bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script type="module" src="javascript.js"></script>
+    <script src="morejava.js"></script>
+
+</body>
+
+</html>

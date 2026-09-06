@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--Website configuration -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab-1</title>
+    <!--Insert bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--Insert bootstrap css icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Insert custom css -->
+    <link rel="stylesheet" href="style.css">
+    <!--Insert font awesome css for star rating -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Insert google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+    <!--Add some color variables-->
+    <style>
+        /*Color variables*/
+        :root {
+            --navbar-color: #DAF7A6;
+            --showcase-color: #000000;
+            --bio-color: #FFC300;
+            --webtech-color: #EC7063;
+            --competence-color: #9CDA0D;
+            --statement-color: #F27A09;
+        }
+    </style>
+
+</head>
+
+
+<!--Visible webpage-->
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center">
+            <!--Logo-->
+            <a class="navbar-brand" href="index.html">
+                <span class="bi bi-globe fs-2"></span>
+                ITWD6.408
+            </a>
+            <!--Links-->
+            <div id="sideNav" class='nav-container'>
+                <ul class="navbar-nav fs-4">
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="form.html">FORMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="webapi.html">WebAPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="javascript.html">JAVASCRIPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2 active" href="research.html">RESEARCH</a>
+                    </li>                
+                </ul>
+            </div>
+            <div class="header-icons">
+                <!--Mobile Search-->
+                <button class="btn d-lg-none" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+                <!--Mobile Hamburger-->
+                <button class="navbar-toggler border-0 d-lg-none" type="button" onclick="toggleNav()">
+                    <span class="bi bi-list fs-1"></span>
+                </button>
+                <!--Desktop Search-->
+                <button class="btn d-none d-lg-block" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--Overlay-->
+    <div id="overlayBackdrop" class="overlay-backdrop" onclick="closeNav()"></div>
+    <!--Search Input-->
+    <div id="collapseSearch" class="collapse container-fluid pb-2 search-bar">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+    </div>
+
+    <!--Main Area-->
+    <main class="container-fluid py-5" style="min-height: 85vh">
+        <!--Reasearch-->
+        <div class="row g-4">
+            <!-- Topic 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front text-white">
+                            <img src="Images/Research/research-copyright.jpg" alt="Research Copyright">
+                            <h4>Copyright &amp; CC Licences</h4>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <h5>Copyright &amp; Fair Use</h5>
+                            <p>
+                                Creative Commons licences provide a flexible way for creators to share their work while retaining ownership. Different licence types allow varying levels of reuse, modification, and distribution, often requiring attribution to the original creator. CC licences encourage collaboration, creativity, and knowledge sharing while helping users understand what content can be legally used. For web developers and content creators, using CC-licensed resources can save time and support ethical content creation.                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front text-white">
+                            <img src="Images/Research/privacy policy.jpg" alt="Privacy Policy">
+                            <h4>Privacy Policy</h4>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <h5>Privacy Principles</h5>
+                            <p>
+                                Copyright protects original creative works and gives creators control over how their work is used. Creative Commons licences allow creators to share their work while specifying how others may use it. Fair use allows limited use of copyrighted material in certain situations, such as education or criticism. Privacy is equally important online, ensuring personal information is collected, stored, and used responsibly. Understanding these concepts helps website creators act legally, ethically, and respectfully in digital environments.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <img src="Images/Research/SEO image.jpg" alt="Search Engine Optimization">
+                            <h4>SEO</h4>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <h5>Search Engine Optimization</h5>
+                            <p>
+                                SEO is the process of improving a website's visibility in search engine results. Effective SEO involves using relevant keywords, creating quality content, improving website structure, and ensuring pages load quickly. Good SEO helps attract more visitors, increases website traffic, and improves the user experience. By following SEO best practices, websites can reach a larger audience and achieve better online performance.                            
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front text-white">
+                            <img src="Images/Research/web hosting.jpg" alt="Web Hosting and Publishing">
+                            <h4>Web Publishing</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>Hosting & Publishing</h5>
+                            <p>
+                                Web publishing is the process of creating and making website content available on the internet, while web hosting provides the server space needed to store and deliver that content to users. Both are essential for a website to be accessible online. Choosing reliable hosting and following proper publishing practices ensures websites remain available, secure, and functional. Together, web publishing and hosting allow individuals and businesses to share information with a global audience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front text-white">
+                            <img src="Images/Research/web performance and maintenace.jpg" alt="Web Performance and Maintenance">
+                            <h4>Performance</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>Performance & Maintenance</h5>
+                            <p>
+                                Web performance refers to how quickly and efficiently a website loads and responds to users. Fast-loading websites improve user satisfaction, engagement, and search engine rankings. Regular maintenance, such as updating software, fixing broken links, and monitoring security, helps ensure websites remain reliable and secure. Consistent performance and maintenance are important for providing a positive user experience and preventing technical issues.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front text-white">
+                            <img src="Images/Research/cyber security.jpg" alt="Cyber Security">
+                            <h4>Web Security</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>Cyber Threats</h5>
+                            <p>
+                            Web security focuses on protecting websites, data, and users from cyber threats such as malware, phishing, ransomware, and hacking attempts. Strong passwords, software updates, security monitoring, and secure data handling are essential security practices. As cyber-attacks continue to increase worldwide, maintaining strong security measures is critical. Effective web security helps protect sensitive information, maintain user trust, and ensure websites remain safe and operational.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--Footer here-->
+    <footer class="container-fluid" style="background-color: var(--navbar-color);">
+        <div class="row">
+            <!--Social Media-->
+            <div class="col-12 col-md-4 d-flex justify-content-center align-items-center d-lg-block">
+                <h3>
+                    <span class="bi bi-linkedin text-info m-1"></span>
+                    <span class="bi bi-facebook text-success m-1"></span>
+                    <span class="bi bi-twitter text-info m-1"></span>
+                    <span class="bi bi-youtube text-danger m-1"></span>
+                </h3>
+            </div>
+
+            <!--Author name section:
+                on small devices: take up 2/3 of the width (col-8), text aligned to center both horizontally and vertically (d-flex justify-content-center align-items-center)
+                on medium devices and large devices: take up 1/3 of the width (col-md-4), text aligned to center both horizontally and vertically (d-flex justify-content-center align-items-center)
+            -->
+            <div class="col-8 col-md-4 d-flex justify-content-center align-items-center">
+                <p class="fs-6">@Bryce Kraus (EIT)</p> 
+            </div>
+            
+            <!--Privacy policy section:
+                on small devices: take up 1/3 of the width (col-4), text aligned to the right (d-flex justify-content-center align-items-center)
+                on medium devices and large devices: take up 1/3 of the width (col-md-4), text aligned to right (d-flex justify-content-end align-items-center)
+                => we can improve by using only "col-4 d-flex justify-content-end align-items-center" to achieve the same effect
+            -->
+            <div class="col-4 col-md-4 d-flex justify-content-end align-items-center">
+                <p class="fs-6 mb-0" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal" style="cursor: pointer;">
+                    Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+        <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyPolicyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        We are committed to protecting your privacy and handling your personal
+                        information in accordance with the Privacy Act 2020 of New Zealand.
+                    </p>
+
+                    <h6>Collection of Information</h6>
+                    <p>
+                        Personal information is collected only when it is necessary for a lawful
+                        purpose connected with our functions or activities. Information may be
+                        collected directly from you or, where permitted by law, from other sources.
+                    </p>
+
+                    <h6>Use of Information</h6>
+                    <p>
+                        Any personal information collected will be used only for the purpose for
+                        which it was obtained, or for purposes that are directly related to that
+                        purpose, unless otherwise permitted by law.
+                    </p>
+
+                    <h6>Storage and Security</h6>
+                    <p>
+                        We take reasonable steps to protect personal information from loss,
+                        unauthorized access, misuse, disclosure, alteration, or destruction.
+                        Access to personal information is restricted to authorized individuals.
+                    </p>
+
+                    <h6>Disclosure of Information</h6>
+                    <p>
+                        Personal information will not be disclosed to third parties except where
+                        required by law, authorized by the individual concerned, or otherwise
+                        permitted under the Privacy Act 2020.
+                    </p>
+
+                    <h6>Access and Correction</h6>
+                    <p>
+                        You have the right to request access to the personal information we hold
+                        about you and to request correction of that information if you believe it
+                        is inaccurate, incomplete, or out of date.
+                    </p>
+
+                    <h6>Retention of Information</h6>
+                    <p>
+                        Personal information is retained only for as long as it is required for
+                        the purpose for which it was collected or as required by law.
+                    </p>
+
+                    <h6>Cookies and Website Analytics</h6>
+                    <p>
+                        This website may use cookies and analytics technologies to improve user
+                        experience, monitor website performance, and understand how visitors use
+                        our services. You may disable cookies through your browser settings,
+                        although some features of the website may not function correctly.
+                    </p>
+
+                    <h6>Your Rights</h6>
+                    <p>
+                        Under the Privacy Act 2020, individuals have rights regarding how their
+                        personal information is collected, used, stored, and disclosed, including
+                        the right to access and request correction of their information.
+                    </p>
+
+                    <p class="small text-muted mt-3">
+                        This Privacy Policy is intended to align with the Information Privacy
+                        Principles contained within the New Zealand Privacy Act 2020.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Insert bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script type="module" src="javascript.js"></script>
+    <script src="morejava.js"></script>
+
+</body>
+
+</html>

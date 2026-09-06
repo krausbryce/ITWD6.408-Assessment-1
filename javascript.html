@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--Website configuration -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab-1</title>
+    <!--Insert bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--Insert bootstrap css icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Insert custom css -->
+    <link rel="stylesheet" href="style.css">
+    <!--Insert font awesome css for star rating -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Insert google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+    <!--Add some color variables-->
+    <style>
+        /*Color variables*/
+        :root {
+            --navbar-color: #DAF7A6;
+            --showcase-color: #000000;
+            --bio-color: #FFC300;
+            --webtech-color: #EC7063;
+            --competence-color: #9CDA0D;
+            --statement-color: #F27A09;
+        }
+    </style>
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/main.min.css"> 
+</head>
+
+
+<!--Visible webpage-->
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center">
+            <!--Logo-->
+            <a class="navbar-brand" href="index.html">
+                <span class="bi bi-globe fs-2"></span>
+                ITWD6.408
+            </a>
+            <!--Links-->
+            <div id="sideNav" class='nav-container'>
+                <ul class="navbar-nav fs-4">
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="form.html">FORMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="webapi.html">WebAPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2 active" href="javascript.html">JAVASCRIPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="research.html">RESEARCH</a>
+                    </li>                
+                </ul>
+            </div>
+            <div class="header-icons">
+                <!--Mobile Search-->
+                <button class="btn d-lg-none" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+                <!--Mobile Hamburger-->
+                <button class="navbar-toggler border-0 d-lg-none" type="button" onclick="toggleNav()">
+                    <span class="bi bi-list fs-1"></span>
+                </button>
+                <!--Desktop Search-->
+                <button class="btn d-none d-lg-block" data-bs-toggle="collapse" data-bs-target="#collapseSearch">
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--Overlay-->
+    <div id="overlayBackdrop" class="overlay-backdrop" onclick="closeNav()"></div>
+    <!--Search Input-->
+    <div id="collapseSearch" class="collapse container-fluid pb-2 search-bar">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+    </div>
+
+    <!--Main Area-->
+<!--Main Area-->
+     <div class="accordion row align-items-start g-1" id="accordionExample" style="min-height: 85vh">
+            <!--Group 2 buttons in this division-->
+            <div class="row col-12 col-lg-3 g-1">
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">Slideshows</button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" 
+                        aria-expanded="false" aria-controls="collapseTwo">Online Shop</button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" 
+                        aria-expanded="false" aria-controls="collapseThree">Online Shop Dashboard</button>
+                </h2> 
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" 
+                        aria-expanded="false" aria-controls="collapseFour">Online Quiz</button>
+                </h2>                
+            </div>
+            
+            <div class="col-12 col-lg-9 ">
+                <!--Section 1--> 
+                <div class="accordion-item" >
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body slideshow-section" style="min-height: 50vh;" id="slideshow-section" >
+                            <div class="slideshow-header">
+                                <h2>Manual Slideshow</h2>
+                                <!--Page Customization-->
+                                <div class="slideshow-controls">
+                                    <!--Text Size-->
+                                    <select id="fontSizeSelect">
+                                        <option value="normal">Text Size</option>
+                                        <option value="small">Small</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="large">Large</option>
+                                    </select>
+                                    <!--Background Color-->
+                                    <select id="backgroundSelect">
+                                        <option value="light">Light Theme</option>
+                                        <option value="dark">Dark Theme</option>
+                                        <option value="blue">Blue Theme</option>
+                                        <option value="green">Green Theme</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="slideshow-container">
+                                <h4 id="manual-slide-title">The The Shawshank Redemption</h4>
+                                <p id="manual-slide-year">1994</p>
+                                <img id="manual-slide-image" src="https://www.filmsite.org/posters/shawshankredemption.jpg" height="300px">
+                                <p id="manual-slide-description">Andy Dufresne, a successful banker, is arrested for the murders of his wife and her lover and is sentenced to life imprisonment at the Shawshank prison. He becomes the most unconventional prisoner.</p>
+                            </div>
+                            <div class="slide-controls">
+                                <button class="slide-btn" onclick="previousSlide()">PREVIOUS</button>
+                                <button class="slide-btn" onclick="nextSlide()">NEXT</button>	
+                            </div>
+                            <hr>
+                            <h2>Automatical Slideshow</h2>
+                            <div class="slideshow-container">
+                                <h4 id="auto-slide-title">The The Shawshank Redemption</h4>
+                                <p id="auto-slide-year">1994</p>
+                                <img id="auto-slide-image" src="https://www.filmsite.org/posters/shawshankredemption.jpg" height="300px">
+                                <p id="auto-slide-description">Andy Dufresne, a successful banker, is arrested for the murders of his wife and her lover and is sentenced to life imprisonment at the Shawshank prison. He becomes the most unconventional prisoner.</p>
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+                <!--Section 2-->
+                <div class="accordion-item">
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                            <section id="movieShop" class="container-fluid">
+                                <h2>Movie Shop</h2>
+                                <div class="card p-3 reviewCard" style="max-width:700px;">
+                                    <img id="shopMovieImage"
+                                        src="https://www.filmsite.org/posters/shawshankredemption.jpg"
+                                        class="img-fluid mb-3"
+                                        width="250">
+                                    <h3 id="shopMovieTitle">The Shawshank Redemption</h3>
+                                    <p id="shopMovieYear">1994</p>
+                                    <p id="shopMovieDescription"></p>
+                                    <h5 id="shopMoviePrice">$9.90</h5>
+                                    <div class="mb-3">
+                                        <button class="btn btn-success" onclick="likeMovie()">Like</button>
+                                        <span id="likeCount">0</span>
+                                        <button class="btn btn-danger ms-3" onclick="dislikeMovie()">Dislike</button>
+                                        <span id="dislikeCount">0</span>
+                                    </div>
+                                    <button class="btn btn-warning mb-3" onclick="addFavourite()">Add to Favourites</button>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-secondary" onclick="previousShopMovie()">Previous</button>
+                                        <button class="btn btn-secondary" onclick="nextShopMovie()">Next</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h4>Comments</h4>
+                                <input
+                                    id="commentInput"
+                                    class="form-control mb-2"
+                                    type="text"
+                                    placeholder="Write a comment...">
+                                <button
+                                    class="btn btn-primary"
+                                    onclick="addComment()">
+                                    Post Comment
+                                </button>
+                                <ul
+                                    id="commentList"
+                                    class="list-group mt-3">
+                                </ul>
+                                <hr>
+                                <div class="card p-3">
+                                    <h4>Favourite List</h4>
+                                    <ul
+                                        id="favouriteList"
+                                        class="list-group">
+                                    </ul>
+                                </div>
+                            </section>                        
+                        </div>
+                    </div>
+                </div>
+                <!--Section 3-->
+                <div class="accordion-item">
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                            <section id="shopDashboard">
+                                <h2>Online Shop Dashboard</h2>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card p-3 mb-3">
+                                            <h4>Statistics</h4>
+                                            <p>Total Movies: <span id="totalMovies"></span></p>
+                                            <p>Favourite Movies: <span id="totalFavourites"></span></p>
+                                            <p>Total Likes: <span id="totalLikes"></span></p>
+                                            <p>Total Comments: <span id="totalComments"></span></p>
+                                        </div>
+                                        <div class="card p-3">
+                                            <h4>Upcoming Events</h4>
+                                            <ul id="eventList" class="list-group"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card p-3">
+                                            <div id="calendar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!--Section 4-->
+                <div class="accordion-item">
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                            <div class="accordion-item">
+                                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body" style="min-height:50vh;">
+                                        <section id="movieQuiz">
+                                            <h2>Movie Quiz</h2>
+                                            <div class="card p-4">
+                                                <h4 id="questionText"></h4>
+                                                <div id="answerButtons" class="mt-3">
+                                                </div>
+                                                <hr>
+                                                <p>
+                                                    Question:
+                                                    <span id="questionNumber">1</span>
+                                                    /
+                                                    <span id="questionTotal">5</span>
+                                                </p>
+                                                <p>
+                                                    Score:
+                                                    <span id="quizScore">0</span>
+                                                </p>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!--Footer here-->
+    <footer class="container-fluid" style="background-color: var(--navbar-color);">
+        <div class="row">
+            <!--Social Media-->
+            <div class="col-12 col-md-4 d-flex justify-content-center align-items-center d-lg-block">
+                <h3>
+                    <span class="bi bi-linkedin text-info m-1"></span>
+                    <span class="bi bi-facebook text-success m-1"></span>
+                    <span class="bi bi-twitter text-info m-1"></span>
+                    <span class="bi bi-youtube text-danger m-1"></span>
+                </h3>
+            </div>
+
+            <div class="col-8 col-md-4 d-flex justify-content-center align-items-center">
+                <p class="fs-6">@Bryce Kraus (EIT)</p> 
+            </div>
+            
+            <div class="col-4 col-md-4 d-flex justify-content-end align-items-center">
+                <p class="fs-6 mb-0" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal" style="cursor: pointer;">
+                    Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+        <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyPolicyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        We are committed to protecting your privacy and handling your personal
+                        information in accordance with the Privacy Act 2020 of New Zealand.
+                    </p>
+
+                    <h6>Collection of Information</h6>
+                    <p>
+                        Personal information is collected only when it is necessary for a lawful
+                        purpose connected with our functions or activities. Information may be
+                        collected directly from you or, where permitted by law, from other sources.
+                    </p>
+
+                    <h6>Use of Information</h6>
+                    <p>
+                        Any personal information collected will be used only for the purpose for
+                        which it was obtained, or for purposes that are directly related to that
+                        purpose, unless otherwise permitted by law.
+                    </p>
+
+                    <h6>Storage and Security</h6>
+                    <p>
+                        We take reasonable steps to protect personal information from loss,
+                        unauthorized access, misuse, disclosure, alteration, or destruction.
+                        Access to personal information is restricted to authorized individuals.
+                    </p>
+
+                    <h6>Disclosure of Information</h6>
+                    <p>
+                        Personal information will not be disclosed to third parties except where
+                        required by law, authorized by the individual concerned, or otherwise
+                        permitted under the Privacy Act 2020.
+                    </p>
+
+                    <h6>Access and Correction</h6>
+                    <p>
+                        You have the right to request access to the personal information we hold
+                        about you and to request correction of that information if you believe it
+                        is inaccurate, incomplete, or out of date.
+                    </p>
+
+                    <h6>Retention of Information</h6>
+                    <p>
+                        Personal information is retained only for as long as it is required for
+                        the purpose for which it was collected or as required by law.
+                    </p>
+
+                    <h6>Cookies and Website Analytics</h6>
+                    <p>
+                        This website may use cookies and analytics technologies to improve user
+                        experience, monitor website performance, and understand how visitors use
+                        our services. You may disable cookies through your browser settings,
+                        although some features of the website may not function correctly.
+                    </p>
+
+                    <h6>Your Rights</h6>
+                    <p>
+                        Under the Privacy Act 2020, individuals have rights regarding how their
+                        personal information is collected, used, stored, and disclosed, including
+                        the right to access and request correction of their information.
+                    </p>
+
+                    <p class="small text-muted mt-3">
+                        This Privacy Policy is intended to align with the Information Privacy
+                        Principles contained within the New Zealand Privacy Act 2020.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="javascript.js"></script>
+        <script src="morejava.js"></script>
+
+
+</html>
