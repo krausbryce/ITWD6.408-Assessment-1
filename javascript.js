@@ -72,21 +72,19 @@ const form = document.forms['mobile-techno-form'];
             return; 
         } 
 
-        //Authenticate the user with Supabase
-        const email = 'krausb1@student.eit.ac.nz'; 
-        const password = 'ZingerBurger21!';
-        // Handle the authentication result 
-        authenticateUser(email, password).then((data) => { 
-            //If authentication is successful, proceed with inserting the data into DB 
-            //Call below function insertData to send the data to the supabase API 
-            insertData(fname, lname, line1, line2, city, gender, phoneType, provider, studyUse); 
-        }).catch((error) => { 
-            // If authentication fails, log the error and alert the user 
-            console.error('Error authenticating user:', error); 
-            alert('ERROR! Authentication failed, user account is not correct!'); 
-        });                 
-    }); 
-}
+        await insertData(
+            fname,
+            lname,
+            line1,
+            line2,
+            city,
+            gender,
+            phoneType,
+            provider,
+            studyUse
+        ); 
+        });
+    }
 
 //-------------------------------------------------------- 
 //Function to authenticate the user with Supabase using email and password 
@@ -95,20 +93,20 @@ async function authenticateUser(email, password) {
     try { 
         // Attempt to sign in the user with the provided email and password 
         const { data, error } = await supabase.auth.signInWithPassword({ 
-            email: email, 
-            password: password, 
-        }); 
-        // Check for errors and log them to the console 
-        if (error) { 
-            console.error('Error authenticating user:', error); 
-            return null; 
-        } 
-        // Return the authenticated user data 
-        return data; 
-    } catch (error) { 
-        // Log any unexpected errors to the console 
-        console.error('Unexpected error during authentication:', error); 
-        return null; 
+            email: email,
+            password: password,
+        });
+        // Check for errors and log them to the console
+        if (error) {
+            console.error('Error authenticating user:', error);
+            return null;
+        }
+        // Return the authenticated user data
+        return data;
+    } catch (error) {
+        // Log any unexpected errors to the console
+        console.error('Unexpected error during authentication:', error);
+        return null;
     } 
 }
 
@@ -122,14 +120,14 @@ async function insertData(fname, lname, line1, line2, city, gender, phoneType, p
     .from('mobiletechnologyform') 
     .insert([{ fname: fname, lname: lname, gender: gender, line1: line1, line2: line2, city: city, phoneType: phoneType, provider: provider, studyUse: studyUse }]); 
     // Check for errors and log them to the console 
-    if (error) { 
-        console.error('Error inserting form data:', error); 
-        alert('ERROR! INSERT FAILED!'); 
-        return null; 
+    if (error) {
+        console.error('Error inserting form data:', error);
+        alert('ERROR! INSERT FAILED!');
+        return null;
     } 
-    // Return the inserted data 
-    alert('Data (' + fname + ' ' + lname + ')' + ' inserted successfully!'); 
-    return data; 
+    // Return the inserted data
+    alert('Data (' + fname + ' ' + lname + ')' + ' inserted successfully!');
+    return data;
 }
 //--------------------------------------------------------
 //Comments
@@ -193,25 +191,25 @@ getData().then(data => {
             );
         displayMobileRecords(filteredRecords);
     });
-}); 
+});
 
 //--------------------------------------------------------
 //JSON RULES
 //--------------------------------------------------------
 
-//Async function to fetch data from the 'jsonrule' table in Supabase 
-async function getJsonData() { 
-    // Fetch data from the 'jsonrule' table and order by 'created_at' in descending order 
-    const { data, error } = await supabase 
-    .from('jsonrule') 
-    .select('*') 
-    .order('created_at', { ascending: true }); 
-    // Check for errors and return an empty array if there is an error 
-    if (error) { 
-    console.error('Error fetching data:', error); 
-    alert('Error Fetching Data'); 
-    return []; 
-    } 
+//Async function to fetch data from the 'jsonrule' table in Supabase
+async function getJsonData() {
+    // Fetch data from the 'jsonrule' table and order by 'created_at' in descending order
+    const { data, error } = await supabase
+    .from('jsonrule')
+    .select('*')
+    .order('created_at', { ascending: true });
+    // Check for errors and return an empty array if there is an error
+    if (error) {
+    console.error('Error fetching data:', error);
+    alert('Error Fetching Data');
+    return [];
+    }
     // Return the fetched data 
     return data; 
 }
@@ -221,10 +219,8 @@ getJsonData().then(data => {
     const outputElement = document.getElementById('jsonrule-data'); 
     //Debug: Display the fetched data as a formatted JSON string in the output element 
     console.log(JSON.stringify(data, null, 2)); 
-
     //Loop through the data and display each record in a formatted way 
-    data.forEach(record => { 
-
+    data.forEach(record => {
         // Create a new div element for each record 
         const recordElement = document.createElement('div'); 
         //add class to each record
@@ -234,11 +230,11 @@ getJsonData().then(data => {
             <p>Description: ${record.description}</p>
             <p style= "border: #1e293b; border-style: dashed; color: red; padding: 5px;">Example: ${record.example}</p>
             `; 
-            
         // Append the record element to the output element 
         outputElement.appendChild(recordElement); 
     }); 
-}); 
+});
+
 //--------------------------------------------------------
 //SEARCH
 //--------------------------------------------------------
@@ -283,15 +279,12 @@ const backgroundSelect =
     document.getElementById('backgroundSelect');
 
 if (slideshowSection && fontSizeSelect && backgroundSelect) {
-
     fontSizeSelect.addEventListener('change', () => {
-
         slideshowSection.classList.remove(
             'font-small',
             'font-medium',
             'font-large'
         );
-
         slideshowSection.classList.add(
             `font-${fontSizeSelect.value}`
         );
@@ -299,23 +292,18 @@ if (slideshowSection && fontSizeSelect && backgroundSelect) {
     });
 
     backgroundSelect.addEventListener('change', () => {
-
         slideshowSection.classList.remove(
             'theme-dark',
             'theme-blue',
             'theme-green'
         );
-
         switch (backgroundSelect.value) {
-
             case 'dark':
                 slideshowSection.classList.add('theme-dark');
                 break;
-
             case 'blue':
                 slideshowSection.classList.add('theme-blue');
                 break;
-
             case 'green':
                 slideshowSection.classList.add('theme-green');
                 break;
